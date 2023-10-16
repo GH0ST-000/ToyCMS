@@ -18,14 +18,13 @@ class StoreProduct extends FormRequest
             'name'=>['required'],
             'price'=>['required'],
             'description'=>['required'],
-            'image_id'=>['required'],
+            'image'=>['required'],
             'qty'=>['required'],
             'sku'=>['required'],
             'tags'=>['sometimes'],
             'discount'=>['sometimes'],
             'rating'=>['sometimes'],
             'product_status'=>['sometimes'],
-
         ];
     }
 }

@@ -2,32 +2,30 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Middleware\CheckAdmin;
 use App\Http\Requests\StoreProduct;
 use App\Models\Products;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class AdminController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware(['auth', 'api','checkAdmin']);
+    }
+
     public function index(){
-        return view('Admin.Dashboard');
+
+        return view('Admin.Dashboard',[
+            'product'=>Products::count(),
+        ]);
     }
 
-    public function product(){
-        return view('Admin.Product');
+    public function logout(){
+        Auth::logout();
+        return redirect('/');
     }
 
-    public function add_new_product(){
-        return view('Admin.Product');
-    }
 
-    public function store_product(StoreProduct $product){
-        $data = $product->validate();
-        $data['sku'] = rand(1,60000);
-        $data['image_id']='1';
-       if (Products::create($data)){
-           return redirect(url('admin/product'))->whith('message','Product created');
-       }else{
-           return redirect()->back()->whith('message','Product dont saved');
-       }
-    }
 }

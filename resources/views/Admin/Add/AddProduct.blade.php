@@ -32,6 +32,17 @@
             <label for="quantity" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Product Quantity</label>
             <input type="number"  id="quantity" name="qty" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="12" required>
         </div>
+        <div class="mb-6">
+            <div>
+                <label for="location" class="block text-sm font-medium leading-6 text-gray-900">Category</label>
+                <select id="location" name="category" class="mt-2 block w-full rounded-md border-0 py-1.5 pl-3 pr-10 text-gray-900 ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-indigo-600 sm:text-sm sm:leading-6">
+                    @foreach($categories as $category )
+                        <option value="{{$category->id}}">{{$category->category_name}}</option>
+                    @endforeach
+                </select>
+            </div>
+
+        </div>
 
         <div class="mb-6">
             <div class="col-span-full">

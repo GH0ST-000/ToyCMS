@@ -1,11 +1,7 @@
 <?php
-
 namespace App\Http\Controllers;
-
-use App\Http\Middleware\CheckAdmin;
-use App\Http\Requests\StoreProduct;
+use App\Models\Category;
 use App\Models\Products;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
 class AdminController extends Controller
@@ -16,9 +12,16 @@ class AdminController extends Controller
     }
 
     public function index(){
-
+        $products = Products::all();
+        $price = 0;
+        foreach ($products as $product){
+            $price = $price+$product->price;
+        }
         return view('Admin.Dashboard',[
-            'product'=>Products::count(),
+            'product'=>Products::all()->count(),
+            'price'=>$price,
+            'category'=>Category::all()->count()
+
         ]);
     }
 

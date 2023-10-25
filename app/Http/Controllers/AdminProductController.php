@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\StoreProduct;
+use App\Models\Category;
 use App\Models\Image;
 use App\Models\Products;
 use Illuminate\Http\Request;
@@ -24,19 +25,29 @@ class AdminProductController extends Controller
     }
 
     public function add_new_product(){
-        return view('Admin.Add.AddProduct');
+
+        return view('Admin.Add.AddProduct',[
+            'categories'=>Category::all()
+        ]);
     }
 
     public function store_product(Request $request){
         $relativePath = $this->saveImage($request->image);
         $sku = rand(1,60000);
+        $cat_id = '';
+
+        if (isset($request->category)){
+            $cat_id = $request->category;
+        }else{
+            $cat_id = 01001;
+        }
         $data = [
             'name'=>$request->name,
             'price'=>$request->price,
             'qty'=>$request->qty,
             'image_id'=>URL::to(Storage::url($relativePath)),
             'sku'=> $sku,
-            'category_id'=>'1',
+            'category_id'=>$cat_id,
             'description'=>$request->description
         ];
         if (Products::create($data)){

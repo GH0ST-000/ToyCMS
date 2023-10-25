@@ -2,6 +2,8 @@
 
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AdminProductController;
+use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\OrderController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -33,6 +35,22 @@ Route::prefix('admin')->group(function (){
         Route::get('/edit_product/{id}','show')->name('admin/edit_product');
         Route::post('/update_product/{id}','UpdateProduct')->name('admin/update_product');
     });
+
+
+    Route::controller(CategoryController::class)->group(function (){
+        Route::get('/category','index')->name('admin/category');
+        Route::post('/add_category','store')->name('admin/add_category');
+        Route::get('/delete_category/{id}','destroy')->name('admin/delete_category');
+
+    });
+
+    Route::controller(OrderController::class)->group(function (){
+        Route::get('/order','index')->name('admin/order');
+
+    });
+
+
+
 });
 
 require __DIR__.'/auth.php';

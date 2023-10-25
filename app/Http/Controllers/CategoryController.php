@@ -7,59 +7,50 @@ use Illuminate\Http\Request;
 
 class CategoryController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
+
     public function index()
     {
-        //
+        return view('admin.Category',[
+            'categories'=>Category::all()
+        ]);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        //
-    }
 
-    /**
-     * Store a newly created resource in storage.
-     */
     public function store(Request $request)
     {
-        //
+       $data =  [
+           'category_name'=>$request->category_name,
+            'sub_category'=>'sub_category',
+       ];
+
+       $category = Category::create($data);
+       if ($category){
+           return redirect(url('admin/category'))->with('message','Category created');
+       }
     }
 
-    /**
-     * Display the specified resource.
-     */
+
     public function show(Category $category)
     {
         //
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     */
+
     public function edit(Category $category)
     {
         //
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
+
     public function update(Request $request, Category $category)
     {
         //
     }
 
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(Category $category)
+
+    public function destroy($id)
     {
-        //
+       Category::find($id)->delete();
+       return redirect(url('admin/category'))->with('message','Category Deleted');
     }
 }

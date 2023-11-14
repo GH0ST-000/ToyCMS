@@ -105,6 +105,9 @@
            @endforeach
            </tbody>
        </table>
+       <div class="pt-4 pb-4 ps-2 pe-2">
+           {{$products->links()}}
+       </div>
    </div>
 <script>
     setTimeout(function (){

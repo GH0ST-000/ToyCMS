@@ -5,12 +5,16 @@ use App\Http\Controllers\AdminProductController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\WelcomeController;
 use Illuminate\Support\Facades\Route;
 
 
-Route::get('/', function () {
-    return view('welcome');
+Route::controller(WelcomeController::class)->group(function (){
+    Route::get('/','index');
 });
+
+
+
 
 Route::get('/dashboard', function () {
     return view('dashboard');

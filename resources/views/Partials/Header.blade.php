@@ -3,19 +3,16 @@
     <div class="sticky-header main-bar-wraper navbar-expand-lg">
         <div class="main-bar clearfix">
             <div class="container-fluid clearfix">
-                <!-- Website Logo -->
                 <div class="logo-header logo-dark me-md-5">
                     <a href="index.html"><img src="images/logo.svg" alt="logo"></a>
                 </div>
 
-                <!-- Nav Toggle Button -->
                 <button class="navbar-toggler collapsed navicon justify-content-end" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                     <span></span>
                     <span></span>
                     <span></span>
                 </button>
 
-                <!-- EXTRA NAV -->
                 <div class="extra-nav">
                     <div class="extra-cell">
                         <ul class="header-right">
@@ -53,22 +50,20 @@
                         </ul>
                     </div>
                 </div>
-
-                <!-- Main Nav -->
                 <div class="header-nav navbar-collapse collapse justify-content-start" id="navbarNavDropdown">
                     <div class="logo-header">
                         <a href="index.html"><img src="{{asset('images/logo.svg')}}" alt="/"></a>
                     </div>
                     <ul class="nav navbar-nav dark-nav">
-                        <li class="sub-menu">
-                            <a href="javascript:void(0);"><span>Home</span></a>
-                        </li>
-                        <li class="has-mega-menu">
-                            <a href="javascript:void(0);"><span>Shop</span></a>
-                        </li>
-                        <li class="has-mega-menu"><a href="javascript:void(0);"><span>Blog</span></a>
-                        </li>
-                        <li><a href="contact-us-1.html">Contact Us</a></li>
+{{--                        <li class="sub-menu">--}}
+{{--                            <a href="javascript:void(0);"><span>Home</span></a>--}}
+{{--                        </li>--}}
+{{--                        <li class="has-mega-menu">--}}
+{{--                            <a href="javascript:void(0);"><span>Shop</span></a>--}}
+{{--                        </li>--}}
+{{--                        <li cla0ss="has-mega-menu"><a href="javascript:void(0);"><span>Blog</span></a>--}}
+{{--                        </li>--}}
+{{--                        <li><a href="contact-us-1.html">Contact Us</a></li>--}}
                     </ul>
                     <div class="dz-social-icon">
                         <ul>
@@ -82,10 +77,7 @@
             </div>
         </div>
     </div>
-    <!-- Main Header End -->
 
-
-    <!-- SearchBar -->
     <div class="dz-search-area dz-offcanvas offcanvas offcanvas-top" tabindex="-1" id="offcanvasTop">
         <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close">
             &times;
@@ -116,13 +108,6 @@
                         </svg>
                     </button>
                 </div>
-                <ul class="recent-tag">
-                    <li class="pe-0"><span>Quick Search :</span></li>
-                    <li><a href="shop-list.html">Wooden Products</a></li>
-                    <li><a href="shop-list.html">Metal Products</a></li>
-                    <li><a href="shop-list.html">Baby Products</a></li>
-                    <li><a href="shop-list.html">Yoga Mats</a></li>
-                </ul>
             </form>
             <div class="row">
                 <div class="col-xl-12">
@@ -268,44 +253,7 @@
                                             </a>
                                         </div>
                                     </li>
-                                    <li>
-                                        <div class="cart-widget">
-                                            <div class="dz-media me-3">
-                                                <img src="images/shop/shop-cart/pic2.jpg" alt="">
-                                            </div>
-                                            <div class="cart-content">
-                                                <h6 class="title"><a href="product-thumbnail.html">Bamboo Cups</a></h6>
-                                                <div class="d-flex align-items-center">
-                                                    <div class="btn-quantity light quantity-sm me-3">
-                                                        <input type="text" value="1" name="demo_vertical2">
-                                                    </div>
-                                                    <h6 class="dz-price text-primary mb-0">$40.00</h6>
-                                                </div>
-                                            </div>
-                                            <a href="javascript:void(0);" class="dz-close">
-                                                <i class="ti-close"></i>
-                                            </a>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="cart-widget">
-                                            <div class="dz-media me-3">
-                                                <img src="images/shop/shop-cart/pic3.jpg" alt="">
-                                            </div>
-                                            <div class="cart-content">
-                                                <h6 class="title"><a href="product-thumbnail.html">Wooden Toothbrushes</a></h6>
-                                                <div class="d-flex align-items-center">
-                                                    <div class="btn-quantity light quantity-sm me-3">
-                                                        <input type="text" value="1" name="demo_vertical2">
-                                                    </div>
-                                                    <h6 class="dz-price text-primary mb-0">$65.00</h6>
-                                                </div>
-                                            </div>
-                                            <a href="javascript:void(0);" class="dz-close">
-                                                <i class="ti-close"></i>
-                                            </a>
-                                        </div>
-                                    </li>
+
                                 </ul>
                                 <div class="cart-total">
                                     <h5 class="mb-0">Subtotal:</h5>
@@ -349,38 +297,7 @@
                                             </a>
                                         </div>
                                     </li>
-                                    <li>
-                                        <div class="cart-widget">
-                                            <div class="dz-media me-3">
-                                                <img src="images/shop/shop-cart/pic2.jpg" alt="">
-                                            </div>
-                                            <div class="cart-content">
-                                                <h6 class="title"><a href="product-thumbnail.html">Wooden Cup</a></h6>
-                                                <div class="d-flex align-items-center">
-                                                    <h6 class="dz-price text-primary mb-0">$40.00</h6>
-                                                </div>
-                                            </div>
-                                            <a href="javascript:void(0);" class="dz-close">
-                                                <i class="ti-close"></i>
-                                            </a>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="cart-widget">
-                                            <div class="dz-media me-3">
-                                                <img src="images/shop/shop-cart/pic3.jpg" alt="">
-                                            </div>
-                                            <div class="cart-content">
-                                                <h6 class="title"><a href="product-thumbnail.html">Bamboo toothbrushes</a></h6>
-                                                <div class="d-flex align-items-center">
-                                                    <h6 class="dz-price text-primary mb-0">$65.00</h6>
-                                                </div>
-                                            </div>
-                                            <a href="javascript:void(0);" class="dz-close">
-                                                <i class="ti-close"></i>
-                                            </a>
-                                        </div>
-                                    </li>
+
                                 </ul>
                                 <div class="mt-auto">
                                     <a href="shop-wishlist.html" class="btn btn-secondary btn-block">Check Your Favourite</a>

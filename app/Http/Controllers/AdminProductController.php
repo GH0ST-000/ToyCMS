@@ -19,8 +19,10 @@ class AdminProductController extends Controller
         $this->middleware(['auth', 'api','checkAdmin']);
     }
     public function product(){
+
+        $product = Products::orderBy('id','desc')->paginate(3);
         return view('Admin.Product',[
-            'products'=>Products::all(),
+            'products'=>$product,
         ]);
     }
 

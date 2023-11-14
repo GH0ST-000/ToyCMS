@@ -10,8 +10,9 @@ class CategoryController extends Controller
 
     public function index()
     {
+        $category = Category::orderBy('id','desc')->paginate(3);
         return view('admin.Category',[
-            'categories'=>Category::all()
+            'categories'=>$category
         ]);
     }
 

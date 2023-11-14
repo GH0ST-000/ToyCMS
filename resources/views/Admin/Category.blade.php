@@ -82,6 +82,9 @@
             @endforeach
             </tbody>
         </table>
+        <div class="pt-4 pb-4 ps-2 pe-2">
+            {{$categories->links()}}
+        </div>
     </div>
 
     <div class="relative z-10" aria-labelledby="modal-title" role="dialog" aria-modal="true" id="new_modal" style="display: none;">
